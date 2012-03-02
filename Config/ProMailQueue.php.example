@@ -1,64 +1,142 @@
 <?php
 /**
-* To configure the ProMailQueue plugin by hand
-* copy this file to app/Config/ProMailQueue.php
+* To configure the ProMailQueue plugin, copy this file to app/Config/ProMailQueue.php
+* and uncomment configuration values you would like to change
 */
 
-/**
-* CakeEmail Configuration Section
-*/
+
+
+/****************************************************************************
+  General Section                                        
+*****************************************************************************/
+
+
+
+/****************************************************************************
+  CakeEmail Section                                        
+*****************************************************************************/
 
 /**
 * Replace the CakePHP's  CakeEmail class with a MailQueue enabled version.
 * All emails sent using CakeEmail will be redirect to the default queue.
 */
 
-$config['ProMailQueue.CakeEmail.autoLoad'] = true;
+    //$config['ProMailQueue.CakeEmail.autoLoad'] = true;
 
 /**
-* Write extra debug information to tmp/logs/debug.log
+* Write extra debug information to log
 */
-$config['ProMailQueue.CakeEmail.debug'] = false;
-$config['ProMailQueue.CakeEmail.debugLogFile'] = 'promailqueue.debug.log';
-$config['ProMailQueue.CakeEmail.fireEvents'] = true;
+    //$config['ProMailQueue.CakeEmail.debug'] = false;
 
-//Queue Configuration Section
-$config['ProMailQueue.Queue.fireEvents'] = true;
-$config['ProMailQueue.Queue.debug'] = false;
-$config['ProMailQueue.Queue.debugLogFile'] = 'promailqueue.debug.log';
-$config['ProMailQueue.Queue.defaultQueue'] = 'medium';
-$config['ProMailQueue.Queue.defaultQueuePriority'] = 63;
-$config['ProMailQueue.Queue.defaultMessagePriority'] = 63;
+/**
+* log file name for debug information
+*/
+    //$config['ProMailQueue.CakeEmail.debugLogFile'] = 'promailqueue.debug.log';
 
-//Mailer Configuration
-$config['ProMailQueue.Mailer.fireEvents'] = true;
+/**
+* Turn on/off CakeEvent dispatching, set to false for CakePHP 2.0 compatability
+*/
+
+    //$config['ProMailQueue.CakeEmail.fireEvents'] = true;
+
+    
+
+/****************************************************************************
+  Queue Configuration Section                                        
+*****************************************************************************/
+
+/**
+* Turn on/off CakeEvent dispatching, set to false for CakePHP 2.0 compatability
+*/
+
+    //$config['ProMailQueue.Queue.fireEvents'] = true;
+
+/**
+* Write extra debug information to log
+*/
+
+    //$config['ProMailQueue.Queue.debug'] = false;
+
+/**
+* log file name for debug information
+*/
+
+    //$config['ProMailQueue.Queue.debugLogFile'] = 'promailqueue.debug.log';
+
+/**
+* default queue, messages that are sent without specifing a queue
+* will be injected here.
+*/
+
+    //$config['ProMailQueue.Queue.defaultQueue'] = 'medium';
+
+/**
+* default priority for new queues 0-127
+*/
+
+    //$config['ProMailQueue.Queue.defaultQueuePriority'] = 63;
+
+/**
+* default priority for injected messages 0-127
+*/
+
+    //$config['ProMailQueue.Queue.defaultMessagePriority'] = 63;
+
+
+    
+/****************************************************************************
+  MailerShell Configuration Section                                        
+*****************************************************************************/
+
+/**
+* Turn on/off CakeEvent dispatching, set to false for CakePHP 2.0 compatability
+*/
+
+    //$config['ProMailQueue.Mailer.fireEvents'] = true;
 
 /**
 * Number of seconds a message has to have lived in the queue, unmodified
 * before it will be sent.  Can be overridden by calling MailerShell with
 * a command line switch 
-* 
-* @var int
 */
-$config['ProMailQueue.Mailer.delay'] = 300;
+
+    //$config['ProMailQueue.Mailer.delay'] = 300;
 
 /**
 * Default number of messages the MailerShell will attempt to send each
 * time executed.  Can be overridden by calling MailerShell with a
 * command line switch .
-* 
-* @var int
 */
-$config['ProMailQueue.Mailer.limit'] = 10;
+
+    //$config['ProMailQueue.Mailer.limit'] = 10;
 
 /**
 * Number of times a message will be requeued and retried before giving up
 * and expiring from the queue.
-* 
-* @var mixed
 */
-$config['ProMailQueue.Mailer.maxRetries'] = 4;
-$config['ProMailQueue.Mailer.log'] = true;
-$config['ProMailQueue.Mailer.debug'] = false;
-$config['ProMailQueue.Mailer.debugLogFile'] = 'promailqueue.debug.log';
-$config['ProMailQueue.Mailer.defaultEmailConfig'] = 'default';
+
+    //$config['ProMailQueue.Mailer.maxRetries'] = 4;
+
+/**
+* log file name for debug information
+*/
+
+    //$config['ProMailQueue.Mailer.log'] = true;
+
+/**
+* Write extra debug information to log
+*/
+
+    //$config['ProMailQueue.Mailer.debug'] = false;
+
+/**
+* log file name for debug information
+*/
+
+    //$config['ProMailQueue.Mailer.debugLogFile'] = 'promailqueue.debug.log';
+
+/**
+* as defined in app/Config/email.ctp
+*/
+
+    //$config['ProMailQueue.Mailer.defaultEmailConfig'] = 'default';

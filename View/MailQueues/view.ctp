@@ -1,18 +1,21 @@
 <div class="mailQueues view">
-<h2><?php  echo __('Mail Queue');?>
+<h2>
+    <?php echo h($mailQueue['MailQueue']['queue']); ?> Queue
+    <small>( <?php  echo __('Mail Queue');?>) ID:<?php echo h($mailQueue['MailQueue']['id']); ?> </small>
     <small class="actions">
-        <?php echo $this->Html->link(__('Edit'), array('action'=>'edit', $mailQueue['MailQueue']['id'] ) );?>
+        <?php echo $this->Html->link(__('Edit'), array('action'=>'edit', $mailQueue['MailQueue']['id'] ), array('class'=>'btn small') );?>
         <?php if ( $mailQueue['MailQueue']['is_active'] ) {
             echo $this->Form->postLink(
                 __('Pause'), 
                 array( 'action'=>'toggleActive', $mailQueue['MailQueue']['id'], 'off' ),
-                null,
+                array('class'=>'btn small'),
                 __('Are you sure you want to pause this queue? Email messages will NOT be delivered until resumed.')
             );
         } else { 
             echo $this->Form->postLink(
                 __('Resume'), 
-                array( 'action'=>'toggleActive', $mailQueue['MailQueue']['id'] , 'on' )
+                array( 'action'=>'toggleActive', $mailQueue['MailQueue']['id'] , 'on' ),
+                array('class'=>'btn small')
             );
         }    
         ?>
@@ -20,7 +23,7 @@
             echo $this->Form->postLink(
                 __('Empty'), 
                 array( 'action'=>'doEmpty', $mailQueue['MailQueue']['id'] ),
-                null,
+                array('class'=>'btn small'),
                 __('Are you sure you want to delete ALL queued email messages from this queue? There is no going back!')
             );
         }    
