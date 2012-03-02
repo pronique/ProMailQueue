@@ -1,7 +1,7 @@
 <div class="mailQueues index">
     <h2><?php  echo __('Queues');?>
         <small class="actions">
-            <?php echo $this->Html->link(__('Add'), array('action'=>'add' ) );?>
+            <?php echo $this->Html->link(__('Add'), array('action'=>'add' ), array('class'=>'btn small') );?>
         </small>
     </h2>
 	<table cellpadding="0" cellspacing="0">
