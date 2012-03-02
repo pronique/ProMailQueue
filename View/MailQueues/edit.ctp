@@ -1,10 +1,11 @@
 <div class="mailQueues form">
+<h2><?php echo __('Edit Queue'); ?></h2>
 <?php echo $this->Form->create('MailQueue');?>
 	<fieldset>
-		<legend><?php echo __('Edit Queue'); ?></legend>
+		<legend></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('queue', array( 'label'=>__('Queue Name'), 'after'=>'no spaces permitted') );
+		echo $this->Form->input('queue', array( 'after'=>'no spaces permitted') );
 		echo $this->Form->input('description');
 		echo $this->Form->input(
             'priority', 

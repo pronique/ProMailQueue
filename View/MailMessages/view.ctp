@@ -1,7 +1,7 @@
 <div class="mailMessages view">
 <h2><?php  echo __('Email Message');?>
     <small class="actions">
-        <?php echo $this->Html->link(__('Edit'), array('action'=>'edit', $mailMessage['MailMessage']['id'] ) );?>
+        <?php echo $this->Html->link(__('Edit'), array('action'=>'edit', $mailMessage['MailMessage']['id'] ), array('class'=>'btn small') );?>
     </small>
 </h2>
 	<dl>
