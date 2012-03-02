@@ -1,0 +1,64 @@
+<?php
+/**
+* To configure the ProMailQueue plugin by hand
+* copy this file to app/Config/ProMailQueue.php
+*/
+
+/**
+* CakeEmail Configuration Section
+*/
+
+/**
+* Replace the CakePHP's  CakeEmail class with a MailQueue enabled version.
+* All emails sent using CakeEmail will be redirect to the default queue.
+*/
+
+$config['ProMailQueue.CakeEmail.autoLoad'] = true;
+
+/**
+* Write extra debug information to tmp/logs/debug.log
+*/
+$config['ProMailQueue.CakeEmail.debug'] = false;
+$config['ProMailQueue.CakeEmail.debugLogFile'] = 'promailqueue.debug.log';
+$config['ProMailQueue.CakeEmail.fireEvents'] = true;
+
+//Queue Configuration Section
+$config['ProMailQueue.Queue.fireEvents'] = true;
+$config['ProMailQueue.Queue.debug'] = false;
+$config['ProMailQueue.Queue.debugLogFile'] = 'promailqueue.debug.log';
+$config['ProMailQueue.Queue.defaultQueue'] = 'medium';
+$config['ProMailQueue.Queue.defaultQueuePriority'] = 63;
+$config['ProMailQueue.Queue.defaultMessagePriority'] = 63;
+
+//Mailer Configuration
+$config['ProMailQueue.Mailer.fireEvents'] = true;
+
+/**
+* Number of seconds a message has to have lived in the queue, unmodified
+* before it will be sent.  Can be overridden by calling MailerShell with
+* a command line switch 
+* 
+* @var int
+*/
+$config['ProMailQueue.Mailer.delay'] = 300;
+
+/**
+* Default number of messages the MailerShell will attempt to send each
+* time executed.  Can be overridden by calling MailerShell with a
+* command line switch .
+* 
+* @var int
+*/
+$config['ProMailQueue.Mailer.limit'] = 10;
+
+/**
+* Number of times a message will be requeued and retried before giving up
+* and expiring from the queue.
+* 
+* @var mixed
+*/
+$config['ProMailQueue.Mailer.maxRetries'] = 4;
+$config['ProMailQueue.Mailer.log'] = true;
+$config['ProMailQueue.Mailer.debug'] = false;
+$config['ProMailQueue.Mailer.debugLogFile'] = 'promailqueue.debug.log';
+$config['ProMailQueue.Mailer.defaultEmailConfig'] = 'default';
